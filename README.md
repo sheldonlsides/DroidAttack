@@ -9,4 +9,4 @@ Includes:
 * Audio files
 * Map assets
 * FX
-* Other third open source third party assets
+* Other third open source assets
