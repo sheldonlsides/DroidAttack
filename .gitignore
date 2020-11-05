@@ -58,6 +58,7 @@ Build/*/**
 !Build/*/PakBlacklist*.txt
 
 # Don't ignore icon files in Build
+
 !Build/**/*.ico
 
 # Built data for maps
@@ -72,3 +73,13 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+/.vscode/*
+.vscode/*
+
+*.DS_Store
+
+*.code-workspace*
+
+Content/AssetPacks/*/
+Content/AssetPacks/*/**
