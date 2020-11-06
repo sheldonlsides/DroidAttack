@@ -83,9 +83,23 @@ float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const&
 	//updates health variable
 	Health -= DamageToApply;
 
+	IsDead();
+
 	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);
 
 	return DamageToApply;
+}
+
+bool ADroidCharacter::IsDead() const
+{
+	bool value = false;
+
+	if (Health == 0) {
+		UE_LOG(LogTemp, Warning, TEXT("Enemy Killed!!"));
+		value = true;
+	}
+
+	return value;
 }
 
 void ADroidCharacter::Fire() 
