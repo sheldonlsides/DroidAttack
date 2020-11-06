@@ -15,6 +15,8 @@ void ADroidCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	Health = MaxHealth;
+
 	//gets creates a reference to the gunclass and spawns it into the world
 	Gun = GetWorld()->SpawnActor<AGun>(GunClass);
 
@@ -53,7 +55,11 @@ void ADroidCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	//Gamepad lookup rate
 	PlayerInputComponent->BindAxis(TEXT("LookUpRate"), this, &ADroidCharacter::LookUpRate);
 
-	//creates a look left and right binding
+	/*
+		creates a look left and right binding
+		for simplicity a call for the yaw info is made directly to the APAwn class
+		which is part of the base class that ACharacter inherits from
+	*/
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &APawn::AddControllerYawInput);
 
 	//Gamepad look right rate
@@ -64,6 +70,22 @@ void ADroidCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 	//creates a fire action
 	PlayerInputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &ADroidCharacter::Fire);
+}
+
+float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) 
+{
+	//gets value of damage taken
+	float DamageToApply = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+
+	//sets the max and min health allowed
+	DamageToApply = FMath::Min(Health, DamageToApply);
+
+	//updates health variable
+	Health -= DamageToApply;
+
+	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);
+
+	return DamageToApply;
 }
 
 void ADroidCharacter::Fire() 

@@ -10,6 +10,9 @@ FPS demo game built with Unreal Engine 4 coded with C++
 * Creating a gamemode blueprint class from a C++ GameMode base class
 * Creating an animation blueprint for player character
 * Creating an animation blendspace for player character
+* Ability for a weapon to apply damage to other actors in world
+* Ability other actors to take damage from weapon systems
+  
 
 #### Note:
 Large asset files were excluded because of large size. They can be downloaded here at this link: https://drive.google.com/file/d/1ROd8yVS3BXjIjjSTmESyxnvwpaPHppxA/view?usp=sharing
