@@ -37,7 +37,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* BulletImpact;
 
-	UPROPERTY(EditAnywhere, Category = "Effects")
+	UPROPERTY(EditAnywhere, Category = "Weapon Info")
 	float MaxRange = 1000.0f;
 
+	UPROPERTY(EditAnywhere, Category = "Weapon Info")
+	float Damage = 10.0f;
 };

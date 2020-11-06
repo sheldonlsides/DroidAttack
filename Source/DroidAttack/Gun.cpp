@@ -44,7 +44,7 @@ void AGun::PullTrigger()
 	//testing camera view
 	// DrawDebugCamera(GetWorld(), Location, Rotation, 90, 2, FColor::Red, true);
 
-	//stores hit result info
+	//stores hit result info. includes info about actor that was hit
 	FHitResult Hit;
 
 	/*
@@ -62,6 +62,16 @@ void AGun::PullTrigger()
 		// DrawDebugPoint(GetWorld(), Hit.Location, 20, FColor::Red, true);
 
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BulletImpact, Hit.Location, ShotDirection.Rotation());
+
+		//gets actor that was hit
+		AActor* HitActor = Hit.GetActor();
+
+		if (HitActor != nullptr) {
+			//creates struct to store damage event info
+			FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
+
+			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+		}
 	}
 
 }
