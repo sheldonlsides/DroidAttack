@@ -1,5 +1,5 @@
 # DroidAttack
-FPS demo game built with Unreal Engine using C++
+FPS demo game built with Unreal Engine coded with C++
 
 #### Concepts Covered in demo code
 * Creating a custom GameModeBase C++ base class
