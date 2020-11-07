@@ -7,7 +7,6 @@ ADroidCharacter::ADroidCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -83,7 +82,10 @@ float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const&
 	//updates health variable
 	Health -= DamageToApply;
 
-	IsDead();
+	if (IsDead()) {
+		UE_LOG(LogTemp, Warning, TEXT("Dead"));
+		Destroy();
+	}
 
 	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);
 
@@ -114,13 +116,13 @@ void ADroidCharacter::MoveRight(float AxisValue)
 void ADroidCharacter::LookUpRate(float AxisValue) 
 {
 	//calculating movement speed
-	AddControllerPitchInput(AxisValue * RotationRate * GetWorld()->GetDeltaSeconds());
+	AddControllerPitchInput(AxisValue * RotationPitchRate * GetWorld()->GetDeltaSeconds());
 }
 
 void ADroidCharacter::LookRightRate(float AxisValue) 
 {
 	//calculating turn speed
-	AddControllerYawInput(AxisValue * RotationRateRight * GetWorld()->GetDeltaSeconds());
+	AddControllerYawInput(AxisValue * RotationTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
 

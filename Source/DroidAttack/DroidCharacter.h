@@ -43,10 +43,10 @@ private:
 	void Fire();
 	
 	UPROPERTY(EditAnywhere)
-	float RotationRate = 150.0f; 
+	float RotationPitchRate = 150.0f; 
 
 	UPROPERTY(EditAnywhere)
-	float RotationRateRight = 150.0f; 
+	float RotationTurnRate = 150.0f; 
 
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 	TSubclassOf<AGun> GunClass;

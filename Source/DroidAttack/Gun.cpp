@@ -65,7 +65,7 @@ void AGun::PullTrigger()
 
 		//gets actor that was hit
 		AActor* HitActor = Hit.GetActor();
-
+		
 		if (HitActor != nullptr) {
 			//creates struct to store damage event info
 			FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
