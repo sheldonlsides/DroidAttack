@@ -12,6 +12,7 @@ FPS demo game built with Unreal Engine 4 coded with C++
 * Creating an animation blendspace for player character
 * Ability for a weapon to apply damage to other actors in world
 * Ability other actors to take damage from weapon systems
+* Creating AI Controller for enemy characters
   
 
 #### Note:
