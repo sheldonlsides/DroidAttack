@@ -84,7 +84,10 @@ float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const&
 
 	if (IsDead()) {
 		UE_LOG(LogTemp, Warning, TEXT("Dead"));
-		Destroy();
+		// Destroy();
+		
+		// GetWorld()->GetTimerManager().SetTimer(Destroy(), Destroy(), 2, false)
+		//  GetWorld()->GetTimerManager().SetTimer(PlayerEnabledHandle, PlayerEnabledDelegate, 3, false);
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);

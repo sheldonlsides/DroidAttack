@@ -22,5 +22,12 @@ void AAIDroidController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    MoveToActor(PlayerPawn, DistanceFromPlayer);
+    //checks that player is in line of sight before following
+    if (LineOfSightTo(PlayerPawn)) {
+        MoveToActor(PlayerPawn, DistanceFromPlayer);
+    } else {
+        ClearFocus(EAIFocusPriority::Default);
+        StopMovement();
+    }
+    
 }
