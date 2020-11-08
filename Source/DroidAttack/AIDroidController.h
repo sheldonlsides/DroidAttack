@@ -26,6 +26,10 @@ private:
 	UPROPERTY()
 	APawn* PlayerPawn;
 
-	UPROPERTY(EditAnywhere, Category = "AI Settings")
-	float DistanceFromPlayer = 200;
+	//old code to manually set distance of AI to player
+	// UPROPERTY(EditAnywhere, Category = "AI Settings")
+	// float DistanceFromPlayer = 200;
+
+	UPROPERTY(EditAnywhere, Category = "AI Behavior")
+	class UBehaviorTree* AIBehavior;
 };

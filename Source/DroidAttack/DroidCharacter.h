@@ -57,6 +57,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float MaxHealth = 100.0f;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Movement")
+	float Speed = 1.0f;
+
 	UPROPERTY()
 	AGun* Gun;
 };

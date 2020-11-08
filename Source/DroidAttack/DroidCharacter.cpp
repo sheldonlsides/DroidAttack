@@ -108,7 +108,7 @@ void ADroidCharacter::Fire()
 
 void ADroidCharacter::MoveForward(float AxisValue) 
 {
-	AddMovementInput(GetActorForwardVector() * AxisValue);
+	AddMovementInput(GetActorForwardVector() * Speed * AxisValue);
 }
 
 void ADroidCharacter::MoveRight(float AxisValue) 
