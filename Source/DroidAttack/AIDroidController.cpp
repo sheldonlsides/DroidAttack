@@ -20,7 +20,7 @@ void AAIDroidController::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
     //gets a reference to the player pawn in the world which is at index 0
-    PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+    //PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 
     // //checks that player is in line of sight before following
     if (LineOfSightTo(PlayerPawn)) {
