@@ -15,6 +15,11 @@ void AAIDroidController::BeginPlay()
         functionality inherited from AAIController
     */
     // MoveToActor(PlayerPawn, DistanceFromPlayer);
+
+     if (AIBehavior != nullptr) {
+        RunBehaviorTree(AIBehavior);
+        GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GetPawn()->GetActorLocation());
+     }
 }
 
 void AAIDroidController::Tick(float DeltaTime) 
@@ -37,7 +42,6 @@ void AAIDroidController::Tick(float DeltaTime)
                 sets the blackboard location of the AI
                 GetPawn() gets info about the current pawn
             */
-            GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GetPawn()->GetActorLocation());
         }
     } else {
         //clears player location if AI loses line of sight
