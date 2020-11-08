@@ -5,19 +5,12 @@
 void AAIDroidController::BeginPlay() 
 {
     Super::BeginPlay();
-    // Old code for manually handling AI focus
-
-    //sets initial focus on the player pawn
-    // SetFocus(PlayerPawn);
-
-    /*
-        allows AI to move to player within 2 units
-        functionality inherited from AAIController
-    */
-    // MoveToActor(PlayerPawn, DistanceFromPlayer);
-
+    
      if (AIBehavior != nullptr) {
+         //start running AI behavior tree
         RunBehaviorTree(AIBehavior);
+
+        //sets blackboard player start location
         GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GetPawn()->GetActorLocation());
      }
 }
@@ -39,10 +32,6 @@ void AAIDroidController::Tick(float DeltaTime)
             GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
             GetBlackboardComponent()->SetValueAsVector(TEXT("LastKnownPlayerLocation"), PlayerPawn->GetActorLocation());
 
-            /*
-                sets the blackboard location of the AI
-                GetPawn() gets info about the current pawn
-            */
         }
     } else {
         //clears player location if AI loses line of sight
