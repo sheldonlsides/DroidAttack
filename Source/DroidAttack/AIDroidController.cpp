@@ -37,6 +37,7 @@ void AAIDroidController::Tick(float DeltaTime)
 
             //sets the blackboard location of the player
             GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
+            GetBlackboardComponent()->SetValueAsVector(TEXT("LastKnownPlayerLocation"), PlayerPawn->GetActorLocation());
 
             /*
                 sets the blackboard location of the AI
