@@ -100,8 +100,6 @@ float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const&
 		//disabled mesh capsule and disabled collision
 		DetachFromControllerPendingDestroy();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
-		
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);
