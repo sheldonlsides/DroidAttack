@@ -2,7 +2,7 @@
 TPS (third person shooter) demo game built with Unreal Engine 4 coded with C++
 
 #### Concepts Covered in demo game code
-* Creating a custom GameModeBase base C++ class and creating a blueprint gamemode based on the C++ class
+* Creating a custom GameModeBase base C++ class
 * Creating a C++ character base class
 * Creating a C++ weapon base class
 * Building a weapon blueprint class from a C++ weapon base class
