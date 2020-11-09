@@ -2,7 +2,7 @@
 TPS (third person shooter) demo game built with Unreal Engine 4 coded with C++
 
 #### Concepts Covered in demo code
-* Creating a custom GameModeBase C++ base class
+* Creating a custom GameModeBase C++ base class and creating a blueprint gamemode based on the C++ class
 * Creating a C++ character base class
 * Creating a C++ weapon base class
 * Building a weapon blueprint class from a C++ weapon base class
@@ -17,6 +17,7 @@ TPS (third person shooter) demo game built with Unreal Engine 4 coded with C++
 * Building an AI Behavior Tree to have AI enemy move, attack and perform other task
 * Creating custom Behavior Tree Task Nodes for taking custom actions using C++ code
 * Creating customer Behavior Service using C++ code
+* Creating a custom C++ Player Controller and creating a blueprint using the C++ class
   
 
 #### Note:
