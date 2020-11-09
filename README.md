@@ -24,11 +24,11 @@ TPS (third person shooter) demo game built with Unreal Engine 4 coded with C++
 #### Note:
 Large asset files were excluded because of large size. They can be downloaded here at this link: https://drive.google.com/file/d/1ROd8yVS3BXjIjjSTmESyxnvwpaPHppxA/view?usp=sharing
 
-Copy the AssetPacks to the **Content** downloaded from the link above to the folder where you cloned the project.
+Copy the AssetPacks to the **Content** folder of the project where you cloned the project.
 
-Includes (Size: 3.14 GB):
+Zip File Includes (Size: 3.14 GB):
 * Audio files
 * Map assets
 * FX\Particle Systems 
 * Animation
-* Other open source third-party assets
+* Other open source third-party assets needed for the project to compile
