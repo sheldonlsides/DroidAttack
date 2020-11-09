@@ -2,6 +2,10 @@
 #include "DroidCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/SkinnedMeshComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "DroidAttackGameModeBase.h"
+#include "KIllEmAllGameMode.h"
+
 // Sets default values
 ADroidCharacter::ADroidCharacter()
 {
@@ -83,11 +87,21 @@ float ADroidCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const&
 	Health -= DamageToApply;
 
 	if (IsDead()) {
-		UE_LOG(LogTemp, Warning, TEXT("Dead"));
-		// Destroy();
+		//gets gamemode reference
+		ADroidAttackGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ADroidAttackGameModeBase>();
+
+		/*
+			calls pawn kills function on the gamemode.
+			call this before dettaching or no player controller will exist 
+			and it is needed in the player controller)
+		*/
+		if (GameMode != nullptr) GameMode->PawnKilled(this);
+
+		//disabled mesh capsule and disabled collision
+		DetachFromControllerPendingDestroy();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 		
-		// GetWorld()->GetTimerManager().SetTimer(Destroy(), Destroy(), 2, false)
-		//  GetWorld()->GetTimerManager().SetTimer(PlayerEnabledHandle, PlayerEnabledDelegate, 3, false);
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("%f"), Health);

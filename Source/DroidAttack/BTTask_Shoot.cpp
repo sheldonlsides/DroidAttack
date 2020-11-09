@@ -1,6 +1,7 @@
 #include "BTTask_Shoot.h"
 #include "AIController.h"
 #include "DroidCharacter.h"
+#include "GameFramework/Pawn.h"
 
 void UBTTask_Shoot::UBTTask_AIShoot() 
 {

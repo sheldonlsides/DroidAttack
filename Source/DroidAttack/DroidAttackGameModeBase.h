@@ -13,5 +13,8 @@ UCLASS()
 class DROIDATTACK_API ADroidAttackGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	virtual void PawnKilled(APawn* PawnKilled);
+
 };

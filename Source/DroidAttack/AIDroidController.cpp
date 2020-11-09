@@ -21,8 +21,8 @@ void AAIDroidController::BeginPlay()
 void AAIDroidController::Tick(float DeltaTime) 
 {
     Super::Tick(DeltaTime);
+
     // old code that has been moved to a Blackboard Service
-    
     // // //checks that player is in line of sight before following
     // if (LineOfSightTo(PlayerPawn)) {
     //     //runs Behavior Tree if available

@@ -47,12 +47,23 @@ void AGun::PullTrigger()
 	//stores hit result info. includes info about actor that was hit
 	FHitResult Hit;
 
+	//sets which actors should be ignore for collisions
+	FCollisionQueryParams Params;
+
+	//ignore gun
+	Params.AddIgnoredActor(this);
+
+	//ignore the owner of the gun
+	Params.AddIgnoredActor(GetOwner());
+
+	// Params.AddIgnoreActors();
+
 	/*
 		sets the Line Trace Hit info, End location and uses the 
 		ECC_GameTraceChannel1 that was setup in the project settings 
 		Engine collision settings
 	*/
-	bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECollisionChannel::ECC_GameTraceChannel1);
+	bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECollisionChannel::ECC_GameTraceChannel1, Params);
 
 	if (bSuccess) {
 		//get direction where shot came from
