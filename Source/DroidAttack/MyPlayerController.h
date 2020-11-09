@@ -11,4 +11,11 @@ class DROIDATTACK_API AMyPlayerController : public APlayerController
 
 public:
 	virtual void GameHasEnded(class AActor* EndGameFocus = nullptr, bool bIsWinner = false);
+
+private:
+	UPROPERTY(EditAnywhere)
+	float RestartDelay = 2.0f;
+
+	//function handling for the restart timer
+	FTimerHandle RestartTimer;
 };
