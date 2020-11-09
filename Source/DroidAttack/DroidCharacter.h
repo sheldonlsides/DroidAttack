@@ -35,12 +35,13 @@ public:
 	UFUNCTION(BlueprintPure)
 	bool IsDead() const;
 
+	void Fire();
+
 private:
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
 	void LookUpRate(float AxisValue);
 	void LookRightRate(float AxisValue);
-	void Fire();
 	
 	UPROPERTY(EditAnywhere)
 	float RotationPitchRate = 150.0f; 

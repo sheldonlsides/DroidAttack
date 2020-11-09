@@ -14,7 +14,9 @@ TPS (third person shooter) demo game built with Unreal Engine 4 coded with C++
 * Ability other actors to take damage from weapon systems
 * Creating AI Controller for enemy characters
 * Built NavMesh for enemy AI to do path finding
-* Building an AI Behavior Tree to have enemy move, attack and perform other task
+* Building an AI Behavior Tree to have AI enemy move, attack and perform other task
+* Creating custom Behavior Tree Task Nodes for taking custom actions using C++ code
+* Creating customer Behavior Service using C++ code
   
 
 #### Note:
